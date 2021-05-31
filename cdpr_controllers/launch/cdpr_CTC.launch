@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="paused" default="true"/>
+    <arg name="model" default="caroca"/>
+    <arg name="model_tra" default="trajectory"/>
+    <arg name="ctl" default="cvxgen_minT"/>
+    <arg name="sty" default="Cartesian_space"/>
+    <arg name="threshold" default="0.0"/>
+
+    
+    <!-- Launch Gazebo with empty world-->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="gui" value="true"/>
+        <arg name="paused" value="$(arg paused)"/>
+    </include >
+    
+    <!-- spawn robot -->
+    <node name="robot_sp" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-sdf -model $(arg model) -file $(find cdpr)/sdf/$(arg model).sdf -x 0 -y -0. -z 0 -R 0 -P 0 -Y 0.0"/>    
+    
+    <!-- load model description -->
+    <rosparam file="$(find cdpr)/sdf/$(arg model).yaml" command="load" ns="model"/>
+    <rosparam file="$(find trajectory_generator)/sdf/$(arg model_tra).yaml" command="load" ns="Tra"/>
+   
+
+   <node pkg="cdpr_controllers" type="CTC" name="CTC" output="screen">
+    <!--		 
+ 	 minW = min |W.tau - w| + constraints (never consider the feasible condtion W.tau = w)
+                minT = min |tau| with constraints (establish the effort shreshold in order to guarantee the tension continuity)  
+                closed_form fm=(fmax+fmin)/2
+                noMin = no constraints 
+	 Barycenter
+	 adaptive_gains CTC+TDA select gain
+                slack_v
+                cvxgen_minT
+                cvxgen_slack	 
+	 Cartesian_space : controller is implemented in task space
+	 Joint_space : cotroller in joint space
+ -->
+      <param name="control" value="$(arg ctl)"/> 
+       <param name="s_type" value="$(arg sty)"/>
+       <param name="threshold" value="$(arg threshold)"/>
+       <param name="coefficient" value="$(arg coefficient)"/>
+
+    </node>
+
+    <!-- generate staright line trajectory -->
+
+    <node pkg="trajectory_generator" type="trajectory" name="trajectory_generator" output="screen">
+    </node>
+
+    <!-- generate  multiple points trajectory -->
+<!--
+    <node pkg="trajectory_generator" type="s_curve" name="s_curve" output="screen">
+    </node>
+-->
+    <!-- generate spin trajectory -->
+<!--
+    <node pkg="trajectory_generator" type="spin_tra" name="spin_tra" output="screen">
+    </node>
+-->
+
+</launch>

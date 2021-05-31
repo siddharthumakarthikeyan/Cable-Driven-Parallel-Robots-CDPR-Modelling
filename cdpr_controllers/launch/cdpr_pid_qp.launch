@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="paused" default="true"/>
+    <arg name="model" default="caroca"/>
+    <arg name="model_tra" default="trajectory"/>
+    
+    <!-- Launch Gazebo with empty world-->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="gui" value="true"/>
+        <arg name="paused" value="$(arg paused)"/>
+    </include >
+    
+    <!-- spawn robot -->
+    <node name="robot_sp" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-sdf -model $(arg model) -file $(find cdpr)/sdf/$(arg model).sdf -x 0 -y -0. -z 0 -R 0 -P 0 -Y 0.0"/>    
+    
+    <!-- load model description -->
+    <rosparam file="$(find cdpr)/sdf/$(arg model).yaml" command="load" ns="model"/>
+    <rosparam file="$(find trajectory_generator)/sdf/$(arg model_tra).yaml" command="load" ns="Tra"/>
+
+    <node pkg="cdpr_controllers" type="qp_pid_control" name="qp_pid_control" output="screen">
+    </node>
+
+    <!-- generate trajectory -->
+
+    <node pkg="trajectory_generator" type="trajectory" name="trajectory_generator" output="screen">
+    </node>
+
+
+</launch>

@@ -1,0 +1,29 @@
+cable: {radius: 0.005}
+frame:
+  color: Yellow
+  lower: [-2.0, -2.0, 0]
+  radius: 0.02
+  type: box
+  upper: [3.5, 3.5, 3.5]
+joints:
+  actuated: {damping: 1, effort: 100, min: 5, velocity: 10}
+  passive: {damping: 0.01, effort: 100, velocity: 10}
+platform:
+  color: Blue
+  inertia: [1, 1, 1, 0, 0, 0]
+  mass: 1
+  position:
+    rpy: [0, 0, 0]
+    xyz: [0, 0, 2]
+  size: [0.4, 0.4, 0.1]
+  type: box
+  visual: box
+points:
+- frame: [-3.5, -3.5, 3.5]
+  platform: [-0.2, -0.2, 0.0]
+- frame: [-2.0, 2.0, 4.0]
+  platform: [-0.2, 0.2, 0.0]
+- frame: [2.0, 2.0, 4.0]
+  platform: [0.2, 0.2, 0.0]
+- frame: [2.0, -2.0, 4.0]
+  platform: [0.2, -0.2, 0.0]

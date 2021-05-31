@@ -1,0 +1,28 @@
+# Produced by CVXGEN, 2017-07-18 05:19:58 -0400.
+# CVXGEN is Copyright (C) 2006-2017 Jacob Mattingley, jem@cvxgen.com.
+# The code in this file is Copyright (C) 2006-2017 Jacob Mattingley.
+# CVXGEN, or solvers produced by CVXGEN, cannot be used for commercial
+# applications without prior written permission from Jacob Mattingley.
+
+# Filename: description.cvxgen.
+# Description: A description of the CVXGEN problem.
+
+parameters
+  A (6,12)
+  b (6)
+  Q (12,12) psd  # quadratic penalty.
+  c(12)
+end
+
+variables
+  x (12)
+end
+
+minimize
+  quad(x, Q)+c'*x
+subject to
+  A*x == b
+  50 <= x[t] <= 10000, t=1..8
+  -10 <=x[t]<=10, t=9..12
+
+end
