@@ -1,0 +1,38 @@
+controllers:
+    config:
+        joints:
+            state: cable_states
+            setpoint: cable_setpoint
+            command: cable_command
+            cascaded_position: False
+            dynamic_reconfigure: True
+    linear0:
+        velocity: {p: 1.0, i: 0., d: 0.0}
+        position: {p: 10, i: 0.1, d: 0.5}
+    linear1:
+        velocity: {p: 1.0, i: 0., d: 0.0}
+        position: {p: 10, i: 0.1, d: 0.5}
+    linear2:
+        velocity: {p: 1.0, i: 0., d: 0.0}
+        position: {p: 10, i: 0.1, d: 0.5}
+    linear3:
+        velocity: {p: 1.0, i: 0., d: 0.0}
+        position: {p: 10, i: 0.1, d: 0.5}
+    linear4:
+        velocity: {p: 1.0, i: 0., d: 0.0}
+        position: {p: 10, i: 0.1, d: 0.5}
+    linear5:
+        velocity: {p: 1.0, i: 0., d: 0.0}
+        position: {p: 10, i: 0.1, d: 0.5}
+    linear6:
+        velocity: {p: 1.0, i: 0., d: 0.0}
+        position: {p: 10, i: 0.1, d: 0.5}
+    linear7:
+        velocity: {p: 1.0, i: 0., d: 0.0}
+        position: {p: 10, i: 0.1, d: 0.5}
+    pointe:
+     frame:
+       - [2.0, -2.0, 0.0]
+       - [-2.0, -2.0, 0.0]
+       - [2.0, -2.0, 4.0]
+       - [-2.0, -2.0, 4.0]  
