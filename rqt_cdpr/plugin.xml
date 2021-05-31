@@ -1,0 +1,20 @@
+<library path="src">
+  <class name="CDPR generator" type="rqt_cdpr.GenPlugin" base_class_type="rqt_gui_py::Plugin">
+    <description>
+      A Python GUI plugin to create user interface for cable robot parameters.
+    </description>
+    <qtgui>
+      <!-- optional grouping...
+      <group>
+        <label>Group</label>
+      </group>
+      <group>
+        <label>Subgroup</label>
+      </group>
+      -->
+      <label>CableDrivenRobot_Plugin</label>
+      <icon type="theme">system-help</icon>
+      <statustip>Great user interface to provide real value.</statustip>
+    </qtgui>
+  </class>
+</library>
