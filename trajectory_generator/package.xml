@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>trajectory_generator</name>
+  <version>0.0.0</version>
+  <description>The trajectory_generator package</description>
+
+  <maintainer email="yuchuan.lang@eleves.ec-nantes.fr">Yuchuan Lang</maintainer>
+
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>cdpr</depend>
+  <depend>log2plot</depend>
+  <depend>roscpp</depend>
+
+</package>
