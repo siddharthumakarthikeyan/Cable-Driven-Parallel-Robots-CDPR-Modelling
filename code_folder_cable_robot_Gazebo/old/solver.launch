@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<launch>  
+    <group ns="cdpr3">
+  
+    <!-- service -->
+    <node name="QP_SOLVER" pkg="cdpr3" type="solveqp" output="screen" />
+    
+    <!-- setpoint -->
+    <!--node name="Trajectory" pkg="cdpr3" type="cdpr3_trajectory" output="screen" /-->
+  
+    
+</group>
+
+</launch>

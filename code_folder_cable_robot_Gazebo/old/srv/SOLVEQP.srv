@@ -1,0 +1,4 @@
+float64[] WrenchMatrix 
+float64[] wVector 
+---
+float64[] tensions 

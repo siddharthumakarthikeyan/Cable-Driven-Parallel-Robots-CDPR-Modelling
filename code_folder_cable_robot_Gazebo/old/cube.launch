@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="paused" default="true"/>
+    <arg name="model" default="cube"/>
+    
+    <!-- Launch Gazebo with empty world-->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="gui" value="true"/>
+        <arg name="paused" value="$(arg paused)"/>
+	
+    </include >
+    
+    
+    <group ns="cube">
+    
+    <!-- load control configuration -->
+    <rosparam file="$(find cdpr3)/sdf/cube.yaml" command="load"/>
+
+    <!-- spawn robot -->
+    <node name="robot_sp" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-sdf -model $(arg model) -file $(find cdpr3)/sdf/$(arg model).sdf -x 0 -y -0. -z 0 -R 0 -P 0 -Y 0.0"/>
+
+</group>
+
+
+</launch>
+
+
