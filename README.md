@@ -1,31 +1,25 @@
-# Cable-Driven-Parallel-Robots-CDPR-Modelling
-Modelling and Implementation of Cable Driven Parallel Manipulator System with Tension Control
+CDPR : Cable based parallel manipulator
 
-Cable Driven Parallel Robots (CDPR) is also known as Cable-Suspended Robots are the emerging and flexible end effector manipulation system. Cable-driven parallel robots (CDPRs) are categorized as a type of parallel manipulators. In CDPRs, flexible cables are used to take the place of rigid links. The particular property of cables provides CDPRs several advantages, including larger workspaces, higher payload-to-weight ratio and lower manufacturing costs rather than rigid-link robots. In this paper, the history of the development of CDPRs is introduced and several successful latest application cases of CDPRs are presented. The theory development of CDPRs is introduced focusing on design, performance analysis and control theory. Research on CDPRs gains wide attention and is highly motivated by the modern engineering demand for large load capacity and workspace. A number of exciting advances in CDPRs are summarized in this paper since it is proposed in the 1980s, which points to a fruitful future both in theory and application. In order to meet the increasing requirements of robot in different areas, future steps foresee more in-depth research and extension applications of CDPRs including intelligent control, composite materials, integrated and reconfigurable design.
+This project was created as a part of ENPM 662 -- Introduction to robot modelling course project. This project was created by,
 
+1] Saumil Shah -- Robotics graduate student student at University of Maryland, College Park.
 
+2] Mahmoud Dahmani -- Robotics graduate student at University of Maryland, College Park.
 
-# 1. Rx, Ry & Rz Speed Simulation
-## (I). Rx Speed
-![rx_gif](https://user-images.githubusercontent.com/82173562/120221714-817a7c80-c25c-11eb-9f2c-40240dfc0759.gif)
+With increasing demand of automation in warehouses and mass manufacturing facilities, more and more robots are being used to do several tasks in such environments. These
+tasks include moving big packages or heavy loads in metal industry. In metal or manufacturing industry,usually hand type serial manipulators are used on larger scale. Because
+of their smaller workspace, number of such robots have to be incorporated. For moving
+packages, serial manipulators are being used with automatic guided vehicles which again
+complicates the whole process.
 
-## (II). Ry Speed
-![yr_gif](https://user-images.githubusercontent.com/82173562/120221785-9fe07800-c25c-11eb-8b88-f4f4eb9430d7.gif)
+This repository consists of source code used to simulate the mathematics derived as a part of the project. You can read the final report of the project [here](https://github.com/SaumilShah66/CDPR-Robot-modelling-project/blob/master/Report.pdf). You can find the videos and other important information used in report [here](https://github.com/SaumilShah66/CDPR-Robot-modelling-project/tree/master/results).
 
-## (III). Rz Speed
-![rz_gif](https://user-images.githubusercontent.com/82173562/120221821-ae2e9400-c25c-11eb-8098-3c47e2d7ff07.gif)
+## Gripping 
 
+![gripping](https://github.com/SaumilShah66/CDPR-Robot-modelling-project/blob/master/results/grip.gif)
 
+## Movement in space
 
-
-
-# 2. Movement of the Suspended Platform
-![ezgif com-gif-maker](https://user-images.githubusercontent.com/82173562/120221346-df5a9480-c25b-11eb-95d6-bd6ba6ace981.gif)
-
-
-# 3. Gripping a Load
-![grip](https://user-images.githubusercontent.com/82173562/120221954-dfa75f80-c25c-11eb-91c0-27661fcc3fcd.gif)
-
-
-
+This robot can move in 3D space and can achieve any 6 degrees of freedom. 
+![movements](https://github.com/SaumilShah66/CDPR-Robot-modelling-project/blob/master/results/move.gif)
 
